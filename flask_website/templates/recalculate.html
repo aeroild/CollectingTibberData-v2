@@ -1,0 +1,42 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}Choose a week or month to recalculate{% endblock %}
+
+{% block main %}
+
+<div class="container">
+
+    <form action="/recalculated" method="POST">
+        <h4>Please select period to recalculate</h4>
+        <div class="form-group">     
+            <div class="row">
+                <div class="col-auto">        
+                    <select class="form-select" id="chosenmonth" name="chosenmonth">
+                    <option selected>Select month</option>
+                    {% for months in months_list %}
+                    <option value="{{ months }}">{{ months }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="col-auto"> 
+                <input class="btn btn-primary" type="submit" name="action" value="Recalculate month">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">        
+                <div class="form-group"> 
+                    <h5><i>or</i></h5>
+                    <br>                    
+                    <input class="btn btn-primary" type="submit" name="action" value="Recalculate last 7 days">
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+</div>
+
+
+{% endblock %}

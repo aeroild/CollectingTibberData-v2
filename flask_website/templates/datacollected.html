@@ -1,0 +1,24 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}Consumption today{% endblock %}
+
+{% block main %}
+
+
+<div class="container">
+    <h4>Collected data: {{hourstocollect}} hours ({{dayscollected}} days)</h4>
+    <div class="row">
+        <div class="col">
+            <table style="width:60%">
+                <tr><th>From</th><th>To</th><th>Price (SEK/kWh)</th><th>Consumption (kWh)</th><th>Cost (SEK)</th></tr>
+                {% for d in data %}
+                <tr><td>{{d[5]}}</td><td>{{d[1]}}</td><td>{{d[2]}}</td><td>{{d[3]}}</td><td>{{d[4]}}</td></tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

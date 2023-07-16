@@ -1,0 +1,36 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}Input information about grid costs{% endblock %}
+
+{% block main %}
+
+<div class="container">
+
+    <h4>Please input costs payable to the grid operator</h4>
+    <hr>
+           
+        <form action="/setup" method="POST">
+
+            <div class="row">
+                <div class="form-group col-md-2">
+                        <label>Fixed monthly cost based on fuse size</label> 
+                        <br>
+                        <input type="number" class="form-control" name="fixedmontlycost" placeholder="405" step="1" required>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="form-group col-md-2">
+                        <label>Fixed cost per kWh</label> 
+                        <br>
+                        <input type="number" class="form-control" name="fixedkwhcost" placeholder="0.67" step=".01" required>
+                </div>
+            </div>            
+            
+        <button type="submit" class="btn btn-primary">Save</button>
+                                               
+        </form>    
+       
+</div>
+
+
+{% endblock %}

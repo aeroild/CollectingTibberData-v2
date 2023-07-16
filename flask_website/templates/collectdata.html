@@ -1,0 +1,39 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}Collect data{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <form action="/datacollected" method="POST">
+
+    <h4>Please select how many hours of data you want to collect</h4>
+    <hr>
+    <input type="submit" class="btn btn-primary" name="action" value="Collect from where you left off">
+    <input type="submit" class="btn btn-primary" name="action" value="Collect last 24 hours">
+    <input type="submit" class="btn btn-primary" name="action" value="Collect last 48 hours">
+    <input type="submit" class="btn btn-primary" name="action" value="Collect last 72 hours">
+    <input type="submit" class="btn btn-primary" name="action" value="Collect last 168 hours = 7 days">
+    <br>
+    <br>
+    or input how many hours to collect:
+ 
+                <div class="row">
+                    <div class="col-md-2"> 
+                        <br>
+                        <input type="number" class="form-control" name="hourstocollect" placeholder="enter from 1 to 336" step="1">
+                    </div>
+                    <div class="col-md-3">
+                    <br>
+                    <button type="submit" name="action" value="Collect last input" class="btn btn-primary">Collect data</button>
+                    </div>   
+                </div> 
+            </div> 
+
+                                            
+    </form>      
+    <hr>
+</div>
+
+
+{% endblock %}

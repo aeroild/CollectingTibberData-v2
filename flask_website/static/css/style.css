@@ -1,0 +1,12 @@
+body {
+    background-color: #D3D3D3;
+}
+
+table { background-color: white; }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+

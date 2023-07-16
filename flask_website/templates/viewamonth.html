@@ -1,0 +1,43 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}Choose a day{% endblock %}
+
+{% block main %}
+
+<div class="container">
+
+    <h4>Please select month to view</h4>
+    <form action="/viewamonth" method="POST">        
+        <div class="row">
+            <div class="col-auto">        
+                <div class="form-group"> 
+                    <select class="form-select" id="chosenmonth" name="chosenmonth" required>
+                    <option selected>Select month</option>
+                    {% for months in months_list %}
+                    <option value="{{ months }}">{{ months }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-auto">
+            <button type="submit" class="btn btn-primary">View selected month</button>
+            </div>
+        </div>
+    </form>
+
+    <table>
+        <h4>Consumption and cost on {{monthtoshow}}</h4>
+    <table style="width:100%">
+        <tr><th>Date</th><th>Consumption (kWh)</th><th>Of this house (kWh)</th><th>Of this EV charging (kWh)</th><th>Cost house (SEK)</th><th>Cost EV (SEK)</th><th>Total cost (SEK)</th></tr>
+        {% for d in data %}
+        <tr><td>{{d[0]}}</td><td>{{d[1]}}</td><td>{{d[3]}}</td><td>{{d[4]}}</td><td>{{d[5]}}</td><td>{{d[6]}}</td><td>{{d[2]}}</td></tr>
+        {% endfor %}
+        <tr><td><b>Sum</b></td><td><b>{{aggr[0][0]}}</b></td><td><b>{{aggr[0][2]}}</b></td><td><b>{{aggr[0][3]}}</b></td><td><b>{{aggr[0][4]}}</b></td><td><b>{{aggr[0][5]}}</b></td><td><b>{{aggr[0][1]}}</b></td></tr>
+    </table>
+
+</div>
+
+
+{% endblock %}

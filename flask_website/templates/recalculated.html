@@ -1,0 +1,24 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}Consumption today{% endblock %}
+
+{% block main %}
+
+
+<div class="container">
+    <h4>Recalculated data for {{periodtoshow}}, i.e. {{number_of_hours}} hours ({{number_of_days}} days)</h4>
+    <div class="row">
+        <div class="col">
+            <table style="width:100%">
+                <tr><th>From time (hh:mm)</th><th>To time (hh:mm)</th><th>Price (SEK/kWh)</th><th>Consumption (kWh)</th><th>Consumption_house (kWh)</th><th>Consumption_EV (kWh)</th><th>Cost_house (SEK)</th><th>Cost_EV (SEK)</th><th>Cost (SEK)</th></tr>
+                {% for d in data %}
+                <tr><td>{{d[0]}}</td><td>{{d[1]}}</td><td>{{d[2]}}</td><td>{{d[3]}}</td><td>{{d[7]}}</td><td>{{d[5]}}</td><td>{{d[8]}}</td><td>{{d[6]}}</td><td>{{d[4]}}</td></tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

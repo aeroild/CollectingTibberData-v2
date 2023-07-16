@@ -1,0 +1,52 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}Choose a day{% endblock %}
+
+{% block main %}
+
+<div class="container">
+
+    <form action="/totalcostmonth" method="POST">
+        <h4>Please select month to view total cost</h4>
+        <div class="form-group">   
+            <div class="row">
+                <div class="col-auto">        
+                    <select class="form-select" id="costmonth" name="costmonth" required>
+                    <option selected>Select month</option>
+                    {% for months in months_list %}
+                    <option value="{{ months }}">{{ months }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="col-auto">  
+                <button type="submit" class="btn btn-primary">View selected month</button>
+                </div>                
+            </div>
+        </div>
+
+    </form>
+    <br>
+    <br>
+    <h4>Total cost {{monthtoshow}}</h4>
+    <table style="width:30%">
+    <tr><th>Total</b></th></tr>
+    <tr><td>Consumption (kWh):</td><td>{{aggr[0][0]}}</td></tr>
+    <tr><td>Cost Tibber (SEK):</td><td>{{aggr[0][1]}}</td></tr>
+    <tr><td>Cost Ellevio (SEK):</td><td>{{total_cost_ellevio}}</td></tr>
+    <tr></tr>
+    <tr><th>House</th></tr>
+    <tr><td>Consumption (kWh):</td><td>{{aggr[0][2]}}</td></tr>
+    <tr><td>Cost Tibber (SEK):</td><td>{{aggr[0][4]}}</td></tr>
+    <tr><td>Cost Ellevio (SEK):</td><td>{{cost_house_ellevio}}</td></tr>
+
+    <tr></tr>
+    <tr><th>EV</th></tr>
+    <tr><td>Consumption (kWh):</td><td>{{aggr[0][3]}}</td></tr>
+    <tr><td>Cost Tibber (SEK):</td><td>{{aggr[0][5]}}</td></tr>
+    <tr><td>Cost Ellevio (SEK):</td><td>{{cost_ev_ellevio}}</td></tr>
+    </table>
+
+</div>
+
+
+{% endblock %}
