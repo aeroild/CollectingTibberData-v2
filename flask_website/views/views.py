@@ -466,101 +466,102 @@ def updateday():
 
             #Creating variables from the form dictionary
             if req.get("cons_ev00") != None:            
-                cons_ev00 = float(req["cons_ev00"])
-            else:
-                cons_ev00 = "N/A"                
+                cons_ev00 = float(req["cons_ev00"])           
             if req.get("cons_ev01") != None: 
-                cons_ev01 = float(req["cons_ev01"])
-            else:
-                cons_ev01 = "N/A"                  
+                cons_ev01 = float(req["cons_ev01"])                
             if req.get("cons_ev02") != None: 
-                cons_ev02 = float(req["cons_ev02"])
-            else:
-                cons_ev02 = "N/A"                  
+                cons_ev02 = float(req["cons_ev02"])                  
             if req.get("cons_ev03") != None: 
-                cons_ev03 = float(req["cons_ev03"])
-            else:
-                cons_ev03 = "N/A"                  
+                cons_ev03 = float(req["cons_ev03"])               
             if req.get("cons_ev04") != None: 
-                cons_ev04 = float(req["cons_ev04"])
-            else:
-                cons_ev04 = "N/A"                  
+                cons_ev04 = float(req["cons_ev04"])                 
             if req.get("cons_ev05") != None: 
-                cons_ev05 = float(req["cons_ev05"])
-            else:
-                cons_ev05 = "N/A"                  
+                cons_ev05 = float(req["cons_ev05"])                 
             if req.get("cons_ev06") != None: 
-                cons_ev06 = float(req["cons_ev06"])
-            else:
-                cons_ev06 = "N/A"                  
+                cons_ev06 = float(req["cons_ev06"])                
             if req.get("cons_ev07") != None: 
-                cons_ev07 = float(req["cons_ev07"])
-            else:
-                cons_ev07 = "N/A"                  
+                cons_ev07 = float(req["cons_ev07"])               
             if req.get("cons_ev08") != None: 
-                cons_ev08 = float(req["cons_ev08"])
-            else:
-                cons_ev08 = "N/A"                  
+                cons_ev08 = float(req["cons_ev08"])                
             if req.get("cons_ev09") != None: 
-                cons_ev09 = float(req["cons_ev09"])
-            else:
-                cons_ev09 = "N/A"                  
+                cons_ev09 = float(req["cons_ev09"])                
             if req.get("cons_ev10") != None: 
-                cons_ev10 = float(req["cons_ev10"])
-            else:
-                cons_ev10 = "N/A"                  
+                cons_ev10 = float(req["cons_ev10"])                 
             if req.get("cons_ev11") != None: 
-                cons_ev11 = float(req["cons_ev11"])
-            else:
-                cons_ev11 = "N/A"                  
+                cons_ev11 = float(req["cons_ev11"])                 
             if req.get("cons_ev12") != None: 
-                cons_ev12 = float(req["cons_ev12"])
-            else:
-                cons_ev12 = "N/A"                  
+                cons_ev12 = float(req["cons_ev12"])                
             if req.get("cons_ev13") != None: 
-                cons_ev13 = float(req["cons_ev13"])
-            else:
-                cons_ev13 = "N/A"                  
+                cons_ev13 = float(req["cons_ev13"])                 
             if req.get("cons_ev14") != None: 
-                cons_ev14 = float(req["cons_ev14"])
-            else:
-                cons_ev14 = "N/A"                  
+                cons_ev14 = float(req["cons_ev14"])                 
             if req.get("cons_ev15") != None: 
-                cons_ev15 = float(req["cons_ev15"])
-            else:
-                cons_ev15 = "N/A"                  
+                cons_ev15 = float(req["cons_ev15"])                
             if req.get("cons_ev16") != None: 
-                cons_ev16 = float(req["cons_ev16"])
-            else:
-                cons_ev16 = "N/A"                  
+                cons_ev16 = float(req["cons_ev16"])                 
             if req.get("cons_ev17") != None: 
-                cons_ev17 = float(req["cons_ev17"])
-            else:
-                cons_ev17 = "N/A"                  
+                cons_ev17 = float(req["cons_ev17"])                 
             if req.get("cons_ev18") != None: 
-                cons_ev18 = float(req["cons_ev18"])
-            else:
-                cons_ev18 = "N/A"                  
+                cons_ev18 = float(req["cons_ev18"])                 
             if req.get("cons_ev19") != None:
                 cons_ev19 = float(req["cons_ev19"])
-            else:
-                cons_ev19 = "N/A"
             if req.get("cons_ev20") != None:           
                 cons_ev20 = float(req["cons_ev20"])
-            else:
-                cons_ev20 = "N/A"
             if req.get("cons_ev21") != None:
                 cons_ev21 = float(req["cons_ev21"])
-            else:
-                cons_ev21 = "N/A"
             if req.get("cons_ev22") != None:
                 cons_ev22 = float(req["cons_ev22"])
-            else:
-                cons_ev22 = "N/A"
             if req.get("cons_ev23") != None:                
                 cons_ev23 = float(req["cons_ev23"])
-            else:
-                cons_ev23 = "N/A"
+
+            if req.get("cons00") != None:            
+                cons00 = float(req["cons00"])
+            if req.get("cons01") != None: 
+                cons01 = float(req["cons01"])             
+            if req.get("cons02") != None: 
+                cons02 = float(req["cons02"])               
+            if req.get("cons03") != None: 
+                cons03 = float(req["cons03"])                 
+            if req.get("cons04") != None: 
+                cons04 = float(req["cons04"])                
+            if req.get("cons05") != None: 
+                cons05 = float(req["cons05"])               
+            if req.get("cons06") != None: 
+                cons06 = float(req["cons06"])                
+            if req.get("cons07") != None: 
+                cons07 = float(req["cons07"])               
+            if req.get("cons08") != None: 
+                cons08 = float(req["cons08"])               
+            if req.get("cons09") != None: 
+                cons09 = float(req["cons09"])                 
+            if req.get("cons10") != None: 
+                cons10 = float(req["cons10"])                
+            if req.get("cons11") != None: 
+                cons11 = float(req["cons11"])               
+            if req.get("cons12") != None: 
+                cons12 = float(req["cons12"])                 
+            if req.get("cons13") != None: 
+                cons13 = float(req["cons13"])                
+            if req.get("cons14") != None: 
+                cons14 = float(req["cons14"])                 
+            if req.get("cons15") != None: 
+                cons15 = float(req["cons15"])               
+            if req.get("cons16") != None: 
+                cons16 = float(req["cons16"])                
+            if req.get("cons17") != None: 
+                cons17 = float(req["cons17"])                
+            if req.get("cons18") != None: 
+                cons18 = float(req["cons18"])             
+            if req.get("cons19") != None:
+                cons19 = float(req["cons19"])
+            if req.get("cons20") != None:           
+                cons20 = float(req["cons20"])
+            if req.get("cons21") != None:
+                cons21 = float(req["cons21"])
+            if req.get("cons22") != None:
+                cons22 = float(req["cons22"])
+            if req.get("cons23") != None:                
+                cons23 = float(req["cons23"])   
 
             start00 = req.get("start00")
             start01 = req.get("start01")
@@ -588,153 +589,156 @@ def updateday():
             start23 = req.get("start23")
 
             if start00 != None:
-                cons_house00 = round((float(data1[0][4]) - cons_ev00), 3)
+                cons_house00 = round((cons00 - cons_ev00), 3)
+                cost00 = round((float(data1[0][3])*cons00), 8)
                 cost_house00 = round((float(data1[0][3])*cons_house00), 3)
                 cost_ev00 = round((float(data1[0][3])*cons_ev00), 3)
-            if start01 != None:                
-                cons_house01 = round((float(data1[1][4]) - cons_ev01), 3)
+            if start01 != None:      
+                cons_house01 = round((cons01 - cons_ev01), 3)
+                cost01 = round((float(data1[1][3])*cons01), 8)
                 cost_house01 = round((float(data1[1][3])*cons_house01), 3)
                 cost_ev01 = round((float(data1[1][3])*cons_ev01), 3)
-            if start02 != None:                
+            if start02 != None:
+                cons_house02 = round((cons02 - cons_ev02), 3)
+                cost02 = round((float(data1[2][3])*cons02), 8)           
                 cons_house02 = round((float(data1[2][4]) - cons_ev02), 3)
                 cost_house02 = round((float(data1[2][3])*cons_house02), 3)
                 cost_ev02 = round((float(data1[2][3])*cons_ev02), 3)
-            if start03 != None:                
+            if start03 != None:
+                cons_house03 = round((cons03 - cons_ev03), 3)
+                cost03 = round((float(data1[3][3])*cons03), 8)                                 
                 cons_house03 = round((float(data1[3][4]) - cons_ev03), 3)
                 cost_house03 = round((float(data1[3][3])*cons_house03), 3)
                 cost_ev03 = round((float(data1[3][3])*cons_ev03), 3)
-            if start04 != None:               
+            if start04 != None:          
+                cons_house04 = round((cons04 - cons_ev04), 3)
+                cost04 = round((float(data1[4][3])*cons04), 8)                       
                 cons_house04 = round((float(data1[4][4]) - cons_ev04), 3)
                 cost_house04 = round((float(data1[4][3])*cons_house04), 3)
                 cost_ev04 = round((float(data1[4][3])*cons_ev04), 3)                
-            if start05 != None:                
+            if start05 != None:   
+                cons_house05 = round((cons05- cons_ev05), 3)
+                cost05 = round((float(data1[5][3])*cons05), 8)                               
                 cons_house05 = round((float(data1[5][4]) - cons_ev05), 3)
                 cost_house05 = round((float(data1[5][3])*cons_house05), 3)
                 cost_ev05 = round((float(data1[5][3])*cons_ev05), 3)                 
-            if start06 != None:                
+            if start06 != None:
+                cons_house06 = round((cons06 - cons_ev06), 3)
+                cost06= round((float(data1[6][3])*cons06), 8)                                  
                 cons_house06 = round((float(data1[6][4]) - cons_ev06), 3)
                 cost_house06 = round((float(data1[6][3])*cons_house06), 3)
                 cost_ev06 = round((float(data1[6][3])*cons_ev06), 3)                 
-            if start07 != None:                
+            if start07 != None:  
+                cons_house07 = round((cons07 - cons_ev07), 3)
+                cost07 = round((float(data1[7][3])*cons07), 8)                                
                 cons_house07 = round((float(data1[7][4]) - cons_ev07), 3)
                 cost_house07 = round((float(data1[7][3])*cons_house07), 3)
                 cost_ev07 = round((float(data1[7][3])*cons_ev07), 3)                 
-            if start08 != None:                
+            if start08 != None:    
+                cons_house08 = round((cons08 - cons_ev08), 3)
+                cost08 = round((float(data1[8][3])*cons08), 8)                              
                 cons_house08 = round((float(data1[8][4]) - cons_ev08), 3)
                 cost_house08 = round((float(data1[8][3])*cons_house08), 3)
                 cost_ev08 = round((float(data1[8][3])*cons_ev08), 3)                 
-            if start09 != None:                
+            if start09 != None:   
+                cons_house09 = round((cons09 - cons_ev09), 3)
+                cost09 = round((float(data1[9][3])*cons09), 8)                               
                 cons_house09 = round((float(data1[9][4]) - cons_ev09), 3)
                 cost_house09 = round((float(data1[9][3])*cons_house09), 3)
                 cost_ev09 = round((float(data1[9][3])*cons_ev09), 3)                 
-            if start10 != None:                
+            if start10 != None:    
+                cons_house10 = round((cons10 - cons_ev10), 3)
+                cost10 = round((float(data1[10][3])*cons10), 8)                              
                 cons_house10 = round((float(data1[10][4]) - cons_ev10), 3)
                 cost_house10 = round((float(data1[10][3])*cons_house10), 3)
                 cost_ev10 = round((float(data1[10][3])*cons_ev10), 3)                 
-            if start11 != None:                
+            if start11 != None:   
+                cons_house11 = round((cons11 - cons_ev11), 3)
+                cost11 = round((float(data1[11][3])*cons11), 8)                               
                 cons_house11 = round((float(data1[11][4]) - cons_ev11), 3)
                 cost_house11 = round((float(data1[11][3])*cons_house11), 3)
                 cost_ev11 = round((float(data1[11][3])*cons_ev11), 3)                 
-            if start12 != None:                
+            if start12 != None: 
+                cons_house12 = round((cons12 - cons_ev12), 3)
+                cost12 = round((float(data1[12][3])*cons12), 8)                                 
                 cons_house12 = round((float(data1[12][4]) - cons_ev12), 3)
                 cost_house12 = round((float(data1[12][3])*cons_house12), 3)
                 cost_ev12 = round((float(data1[12][3])*cons_ev12), 3)                  
-            if start13 != None:                
+            if start13 != None: 
+                cons_house13 = round((cons13 - cons_ev13), 3)
+                cost13 = round((float(data1[13][3])*cons13), 8)                                 
                 cons_house13 = round((float(data1[13][4]) - cons_ev13), 3)
                 cost_house13= round((float(data1[13][3])*cons_house13), 3)
                 cost_ev13 = round((float(data1[13][3])*cons_ev13), 3)                  
-            if start14 != None:                
+            if start14 != None:   
+                cons_house14 = round((cons14 - cons_ev14), 3)
+                cost14 = round((float(data1[14][3])*cons14), 8)                               
                 cons_house14 = round((float(data1[14][4]) - cons_ev14), 3)
-                cost_house14 = round((float(data14[14][3])*cons_house14), 3)
-                cost_ev14 = round((float(data14[14][3])*cons_ev14), 3)                  
-            if start15 != None:                
+                cost_house14 = round((float(data1[14][3])*cons_house14), 3)
+                cost_ev14 = round((float(data1[14][3])*cons_ev14), 3)                  
+            if start15 != None:  
+                cons_house15 = round((cons15 - cons_ev15), 3)
+                cost15 = round((float(data1[15][3])*cons15), 8)                                
                 cons_house15 = round((float(data1[15][4]) - cons_ev15), 3)
                 cost_house15 = round((float(data1[15][3])*cons_house15), 3)
                 cost_ev15 = round((float(data1[15][3])*cons_ev15), 3)                  
-            if start16 != None:                
+            if start16 != None:  
+                cons_house16 = round((cons16 - cons_ev16), 3)
+                cost16 = round((float(data1[16][3])*cons16), 8)                                
                 cons_house16 = round((float(data1[16][4]) - cons_ev16), 3)
                 cost_house16 = round((float(data1[16][3])*cons_house16), 3)
                 cost_ev16 = round((float(data1[16][3])*cons_ev16), 3)                  
-            if start17 != None:                
+            if start17 != None:    
+                cons_house17 = round((cons17 - cons_ev17), 3)
+                cost17 = round((float(data1[17][3])*cons17), 8)                              
                 cons_house17 = round((float(data1[17][4]) - cons_ev17), 3)
                 cost_house17 = round((float(data1[17][3])*cons_house17), 3)
                 cost_ev17 = round((float(data1[17][3])*cons_ev17), 3)                  
-            if start18 != None:                
+            if start18 != None:  
+                cons_house18 = round((cons18 - cons_ev18), 3)
+                cost18 = round((float(data1[18][3])*cons18), 8)                                
                 cons_house18 = round((float(data1[18][4]) - cons_ev18), 3)
                 cost_house18 = round((float(data1[18][3])*cons_house18), 3)
                 cost_ev18 = round((float(data1[18][3])*cons_ev18), 3)                  
             if start19 != None:
+                cons_house19 = round((cons19 - cons_ev19), 3)
+                cost19 = round((float(data1[19][3])*cons19), 8)                  
                 cons_house19 = round((float(data1[19][4]) - cons_ev19), 3)
                 cost_house19 = round((float(data1[19][3])*cons_house19), 3)
                 cost_ev19 = round((float(data1[19][3])*cons_ev19), 3)                  
             if start20 != None:
+                cons_house20 = round((cons20 - cons_ev20), 3)
+                cost20 = round((float(data1[20][3])*cons20), 8)  
                 cons_house20 = round((float(data1[20][4]) - cons_ev20), 3)
                 cost_house20 = round((float(data1[20][3])*cons_house20), 3)
                 cost_ev20 = round((float(data1[20][3])*cons_ev20), 3)                 
             if start21 != None:
+                cons_house21 = round((cons21 - cons_ev21), 3)
+                cost21 = round((float(data1[21][3])*cons21), 8)                  
                 cons_house21 = round((float(data1[21][4]) - cons_ev21), 3)
                 cost_house21 = round((float(data1[21][3])*cons_house21), 3)
                 cost_ev21 = round((float(data1[21][3])*cons_ev21), 3)                 
             if start22 != None:
+                cons_house22 = round((cons22 - cons_ev22), 3)
+                cost22 = round((float(data1[22][3])*cons22), 8)                  
                 cons_house22 = round((float(data1[22][4]) - cons_ev22), 3)
                 cost_house22 = round((float(data1[22][3])*cons_house22), 3)
                 cost_ev22 = round((float(data1[22][3])*cons_ev22), 3)                 
             if start23 != None:
+                cons_house23 = round((cons23 - cons_ev23), 3)
+                cost23 = round((float(data1[23][3])*cons23), 8)                  
                 cons_house23 = round((float(data1[23][4]) - cons_ev23), 3)
                 cost_house23 = round((float(data1[23][3])*cons_house23), 3)
                 cost_ev23 = round((float(data1[23][3])*cons_ev23), 3)                 
 
-            if cons_ev00 == '':
-                cons_ev00 = '0'
-            if cons_ev01 == '':
-                cons_ev01 = '0'
-            if cons_ev02 == '':
-                cons_ev02 = '0'
-            if cons_ev03 == '':
-                cons_ev03 = '0'
-            if cons_ev04 == '':
-                cons_ev04 = '0'
-            if cons_ev05 == '':
-                cons_ev05 = '0'
-            if cons_ev06 == '':
-                cons_ev06 = '0'
-            if cons_ev07 == '':
-                cons_ev07 = '0'
-            if cons_ev08 == '':
-                cons_ev08 = '0'
-            if cons_ev09 == '':
-                cons_ev09 = '0'
-            if cons_ev10 == '':
-                cons_ev10 = '0'
-            if cons_ev11 == '':
-                cons_ev11 = '0'
-            if cons_ev12 == '':
-                cons_ev12 = '0'
-            if cons_ev13 == '':
-                cons_ev13 = '0'
-            if cons_ev14 == '':
-                cons_ev14 = '0'
-            if cons_ev15 == '':
-                cons_ev15 = '0'
-            if cons_ev16 == '':
-                cons_ev16 = '0'
-            if cons_ev17 == '':
-                cons_ev17 = '0'
-            if cons_ev18 == '':
-                cons_ev18 = '0'
-            if cons_ev19 == '':
-                cons_ev19 = '0'
-            if cons_ev20 == '':
-                cons_ev20 = '0'
-            if cons_ev21 == '':
-                cons_ev21 = '0'
-            if cons_ev22 == '':
-                cons_ev22 = '0'
-            if cons_ev23 == '':
-                cons_ev23 = '0'
-
-
             if start00 != None:
+
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons00, cost00, start00]);
+                conn.commit()
+                cur.close()
+                conn.close()
 
                 conn = get_db_connection()
                 cur = conn.cursor()
@@ -754,6 +758,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons01, cost01, start01]);
+                conn.commit()
+                cur.close()
+                conn.close()
+
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev01, cons_house01, start01]);
                 conn.commit()
                 cur.close()
@@ -770,6 +781,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons02, cost02, start02]);
+                conn.commit()
+                cur.close()
+                conn.close()
+                
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev02, cons_house02, start02]);
                 conn.commit()
                 cur.close()
@@ -783,6 +801,13 @@ def updateday():
                 conn.close()
 
             if start03 != None:
+
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons03, cost03, start03]);
+                conn.commit()
+                cur.close()
+                conn.close()
 
                 conn = get_db_connection()
                 cur = conn.cursor()
@@ -802,6 +827,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons04, cost04, start04]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev04, cons_house04, start04]);
                 conn.commit()
                 cur.close()
@@ -816,6 +848,13 @@ def updateday():
 
             if start05 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons05, cost05, start05]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev05, cons_house05, start05]);
@@ -834,6 +873,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons06, cost06, start06]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev06, cons_house06, start06]);
                 conn.commit()
                 cur.close()
@@ -848,6 +894,13 @@ def updateday():
 
             if start07 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons07, cost07, start07]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev07, cons_house07, start07]);
@@ -866,6 +919,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons08, cost08, start08]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev08, cons_house08, start08]);
                 conn.commit()
                 cur.close()
@@ -880,6 +940,13 @@ def updateday():
 
             if start09 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons09, cost09, start09]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev09, cons_house09, start09]);
@@ -898,6 +965,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons10, cost10, start10]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev10, cons_house10, start10]);
                 conn.commit()
                 cur.close()
@@ -912,6 +986,13 @@ def updateday():
 
             if start11 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons11, cost11, start11]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev11, cons_house11, start11]);
@@ -930,6 +1011,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons12, cost12, start12]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev12, cons_house12, start12]);
                 conn.commit()
                 cur.close()
@@ -944,6 +1032,13 @@ def updateday():
 
             if start13 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons13, cost13, start13]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev13, cons_house13, start13]);
@@ -962,6 +1057,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons14, cost14, start14]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev14, cons_house14, start14]);
                 conn.commit()
                 cur.close()
@@ -976,6 +1078,13 @@ def updateday():
 
             if start15 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons15, cost15, start15]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev15, cons_house15, start15]);
@@ -994,6 +1103,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons16, cost16, start16]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev16, cons_house16, start16]);
                 conn.commit()
                 cur.close()
@@ -1008,6 +1124,13 @@ def updateday():
 
             if start17 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons17, cost17, start17]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev17, cons_house17, start17]);
@@ -1026,6 +1149,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons18, cost18, start18]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev18, cons_house18, start18]);
                 conn.commit()
                 cur.close()
@@ -1040,6 +1170,13 @@ def updateday():
 
             if start19 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons19, cost19, start19]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev19, cons_house19, start19]);
@@ -1058,6 +1195,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons20, cost20, start20]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev20, cons_house20, start20]);
                 conn.commit()
                 cur.close()
@@ -1072,6 +1216,13 @@ def updateday():
 
             if start21 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons21, cost21, start21]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev21, cons_house21, start21]);
@@ -1090,6 +1241,13 @@ def updateday():
 
                 conn = get_db_connection()
                 cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons22, cost22, start22]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
+                conn = get_db_connection()
+                cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev22, cons_house22, start22]);
                 conn.commit()
                 cur.close()
@@ -1101,8 +1259,16 @@ def updateday():
                 conn.commit()
                 cur.close()
                 conn.close()
+
             if start23 != None:
 
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute("UPDATE collecteddata SET consumption = (%s), cost = (%s)" "WHERE start = (%s)", [cons23, cost23, start23]);
+                conn.commit()
+                cur.close()
+                conn.close()
+ 
                 conn = get_db_connection()
                 cur = conn.cursor()
                 cur.execute("UPDATE consumption SET consumption_ev = (%s), consumption_house = (%s)" "WHERE start = (%s)", [cons_ev23, cons_house23, start23]);
