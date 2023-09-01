@@ -7,9 +7,11 @@ import tibber
 
 import datetime
 
-import math
+from datetime import timezone
 
-#from datetime import datetime
+import pytz
+
+import math
 
 import pandas as pd
 
@@ -117,11 +119,14 @@ def datacollected():
             #Keeping the first item in the list, i.e. the newest stop time
             lastcollected = stoptimes[0]
 
-            #Converting stop time into a datetime object
+            #Converting stop time into a datetime object and making it timezone (ECT) aware
             lastcollected2=datetime.datetime.strptime(lastcollected, '%Y-%m-%dT%H:%M')
+            ect_timezone = pytz.timezone('Europe/Berlin')            
+            lastcollected2 = lastcollected2.astimezone(ect_timezone)
 
-            #Getting current date and time + 1 hour since app is running in GMT-timezone
-            date_time = datetime.datetime.now() + datetime.timedelta(hours=2)
+            #Local date and time converted to European Central Time since the app can run in any timezone
+            date_time_now = datetime.datetime.now()
+            date_time = date_time_now.astimezone(ect_timezone)
 
             #Calculating how many hours has passed since last data collection
             tdelta = date_time - lastcollected2
@@ -1599,11 +1604,178 @@ def totalcostmonth():
     rounded_df_aggr = df_aggr.round(decimals=2)
     aggr = rounded_df_aggr.values.tolist()
 
+    #Calculating various cost elements
     cost_house_ellevio = round((float(aggr[0][2]) * float(fixedkwhcost)) + float(fixedmontlycost), 2)
     cost_ev_ellevio = round((float(aggr[0][3]) * float(fixedkwhcost)), 2)
-    total_cost_ellevio = cost_house_ellevio + cost_ev_ellevio
+    total_cost_ellevio = round(cost_house_ellevio + cost_ev_ellevio, 2)
+    
+    total_cost = round(aggr[0][1] + total_cost_ellevio, 2)
+    total_cost_tibber_per_kwh = round(aggr[0][1]/aggr[0][0], 2)
+    total_cost_per_kwh = round(total_cost/aggr[0][0], 2)
 
-    return render_template("/totalcostmonth.html", months_list=months_list, aggr=aggr, cost_house_ellevio=cost_house_ellevio, cost_ev_ellevio=cost_ev_ellevio, total_cost_ellevio=total_cost_ellevio, monthtoshow=monthtoshow)
+    if aggr[0][3] != 0:
+        cost_ev_total = round(aggr[0][5] + cost_ev_ellevio, 2)
+        ev_cost_tibber_per_kwh = round(aggr[0][5] / aggr[0][3], 2) 
+        cost_ev_per_kwh_total = round(cost_ev_total / aggr[0][3], 2)
+    else:
+        cost_ev_total = 0
+        ev_cost_tibber_per_kwh = 0
+        cost_ev_per_kwh_total = 0
+
+    cost_house_total = round(aggr[0][4] + cost_house_ellevio, 2)
+    house_cost_tibber_per_kwh = round(aggr[0][4] / aggr[0][2], 2)
+    cost_house_per_kwh_total = round(cost_house_total / aggr[0][2], 2)
+
+    return render_template("/totalcostmonth.html", months_list=months_list, aggr=aggr, cost_house_ellevio=cost_house_ellevio, cost_ev_ellevio=cost_ev_ellevio, total_cost_ellevio=total_cost_ellevio, monthtoshow=monthtoshow, total_cost = total_cost, total_cost_tibber_per_kwh = total_cost_tibber_per_kwh, total_cost_per_kwh = total_cost_per_kwh, cost_ev_total = cost_ev_total, ev_cost_tibber_per_kwh = ev_cost_tibber_per_kwh, cost_ev_per_kwh_total = cost_ev_per_kwh_total, cost_house_total = cost_house_total, house_cost_tibber_per_kwh = house_cost_tibber_per_kwh, cost_house_per_kwh_total = cost_house_per_kwh_total)
+
+
+@app.route("/viewconsumption", methods=["GET", "POST"])
+def viewconsumption():
+
+    if request.method == "GET":
+
+        return render_template("viewconsumption.html")
+
+    if request.method == "POST":
+
+        req = request.form 
+        action = req.get("action")
+
+        if action[10:12] == "24":
+            hourstocollect = 24
+        
+        if action[10:12] == "48":
+            hourstocollect = 48
+
+        if action[10:12] == "72":
+            hourstocollect = 72
+         
+        ###############################################################################################
+        #Collecting data from Tibber and saving it in lists that are merged and made into a tuple list
+        ###############################################################################################
+        account=tibber.Account(tibber_token)
+        home = account.homes[0]
+        hour_data = home.fetch_consumption("HOURLY", last=hourstocollect)
+       
+        start=[]
+        stop=[]
+        price=[]
+        cons=[]
+        cost=[]
+
+        for hour in hour_data:
+            data1=(hour.from_time)
+            data2=(hour.to_time)
+            data3=(f"{hour.unit_price}{hour.currency}")
+            data4=(hour.consumption)
+            data5=(hour.cost)
+            start.append(data1)
+            stop.append(data2)
+            price.append(data3)
+            cons.append(data4)
+            cost.append(data5)        
+
+        #Removing unnecessary info from the date variable
+        start = [d[:-13] for d in start]
+        stop = [d[:-13] for d in stop]
+
+        #Removing SEK from the list containing prices
+        price = ([s.replace('SEK', '') for s in price])
+
+        #Merging all lists of data to one tuple list and transforming it into a dataframe
+        def merge(stop,price,cons,cost,start):
+            merged_list = [(stop[i], price[i], cons[i], cost[i],start[i]) for i in range(0, len(start))]
+            return merged_list
+        data = merge(stop,price,cons,cost,start)
+
+    return render_template("/viewconsumption.html", data=data, hourstocollect=hourstocollect)
+
+
+@app.route("/viewprices", methods=["GET", "POST"])
+def viewprices():
+
+    if request.method == "GET":
+
+        account=tibber.Account(tibber_token)
+        home = account.homes[0]
+        current_subscription = home.current_subscription
+        #price_info = current_subscription.price_info
+        price_now = current_subscription.price_info.current.total
+        #price_nordpool = current_subscription.price_info.current.energy
+        price_level = current_subscription.price_info.current.level
+        price_info_today = current_subscription.price_info.today
+        price_info_tomorrow = current_subscription.price_info.tomorrow
+      
+        ##############################
+        # Collecting tomorrow's prices
+        ##############################
+
+        total_td=[]
+        energy_td=[]
+        tax_td=[]
+        starts_at_td=[]
+        currency_td=[]
+        level_td=[]
+
+        for hour in price_info_today:
+            data1=(hour.total)
+            data2=(hour.energy)
+            data3=(hour.tax)
+            data4=(hour.starts_at)
+            data5=(hour.currency)
+            data6=(hour.level)   
+
+            total_td.append(data1)
+            energy_td.append(data2)
+            tax_td.append(data3)
+            starts_at_td.append(data4)
+            currency_td.append(data5)
+            level_td.append(data6)
+
+        #Removing unnecessary info from the date variable
+        starts_at_td = [d[11:-13] for d in starts_at_td]
+
+        #Merging all lists of data to one tuple list
+        def merge(total_td,energy_td,tax_td,starts_at_td,currency_td,level_td):
+            merged_list = [(total_td[i], energy_td[i], tax_td[i], starts_at_td[i],currency_td[i],level_td[i]) for i in range(0, len(total_td))]
+            return merged_list
+        prices_today = merge(total_td,energy_td,tax_td,starts_at_td,currency_td,level_td)
+
+        ##############################
+        # Collecting today's prices
+        ##############################
+
+        total_tm=[]
+        energy_tm=[]
+        tax_tm=[]
+        starts_at_tm=[]
+        currency_tm=[]
+        level_tm=[]
+
+        for hour in price_info_tomorrow:
+            data1=(hour.total)
+            data2=(hour.energy)
+            data3=(hour.tax)
+            data4=(hour.starts_at)
+            data5=(hour.currency)
+            data6=(hour.level)   
+
+            total_tm.append(data1)
+            energy_tm.append(data2)
+            tax_tm.append(data3)
+            starts_at_tm.append(data4)
+            currency_tm.append(data5)
+            level_tm.append(data6)
+
+        #Merging all lists of data to one tuple list
+        def merge(total_tm,energy_tm,tax_tm,starts_at_tm,currency_tm,level_tm):
+            merged_list = [(total_tm[i], energy_tm[i], tax_tm[i], starts_at_tm[i],currency_tm[i],level_tm[i]) for i in range(0, len(total_tm))]
+            return merged_list
+        prices_tomorrow = merge(total_tm,energy_tm,tax_tm,starts_at_tm,currency_tm,level_tm)
+
+    return render_template("/viewprices.html", prices_today=prices_today, prices_tomorrow=prices_tomorrow, price_now=price_now, price_level = price_level)
+
+
 
 @app.errorhandler(500)
 def internal_server_error(e):

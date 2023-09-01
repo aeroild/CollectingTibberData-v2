@@ -1,0 +1,35 @@
+{% extends "/templates/template.html" %}
+
+{% block title %}View selected data{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <form action="/viewconsumption" method="POST">
+
+    <h4>Please select how many hours of data you want to view</h4>
+    <hr>
+    <input type="submit" class="btn btn-primary" name="action" value="View last 24 hours">
+    <input type="submit" class="btn btn-primary" name="action" value="View last 48 hours">
+    <input type="submit" class="btn btn-primary" name="action" value="View last 72 hours">
+    <br>
+    <br>
+    </form>      
+    <hr>
+
+    <h4>{{hourstocollect}} hours to view</h4>
+    <div class="row">
+        <div class="col">
+            <table style="width:60%">
+                <tr><th>From</th><th>To</th><th>Price (SEK/kWh)</th><th>Consumption (kWh)</th><th>Cost (SEK)</th></tr>
+                {% for d in data %}
+                <tr><td>{{d[4]}}</td><td>{{d[0]}}</td><td>{{d[1]}}</td><td>{{d[2]}}</td><td>{{d[3]}}</td></tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
